@@ -10,6 +10,17 @@ body,html {
   font-family: sans-serif;
 }
 
+.howTo {
+  text-align: center;
+  border: .4rem solid black;
+  border-radius: .5rem;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem #ffc600;
+  padding: 50px;
+  font-size: 3em;
+}
+
 .keys {
   display: flex;
   flex: 1;
