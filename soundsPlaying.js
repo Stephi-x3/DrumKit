@@ -13,18 +13,16 @@ function playSound(KeyboardEvent){
 
 function playSoundAfterTouch(TouchEvent){
     console.log(TouchEvent);
-    console.log(TouchEvent.parentElement);
-    return;
-    /*const audio = document.querySelector(`audio[data-key="${TouchEvent.parentElement.key}"]`);
+    console.log(TouchEvent.target.parentNode.attributes[0].nodeValue);
+    const audio = document.querySelector(`audio[data-key="${TouchEvent.target.parentNode.attributes[0].nodeValue}"]`);
     if (!audio) {
         return;
     } else {
-        const key = document.querySelector(`div[data-key="${TouchEvent.parentElement.key}"]`);
+        const key = document.querySelector(`div[data-key="${TouchEvent.target.parentNode.attributes[0].nodeValue}"]`);
         key.classList.add('playing'); //class playing in style.css
         audio.play();
         audio.currentTime = 0;
-        
-    }    */
+    } 
 }
 
 function removeTransition(TransitionEvent){
