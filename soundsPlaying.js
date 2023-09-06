@@ -1,30 +1,26 @@
 function playSound(KeyboardEvent){
     const audio = document.querySelector(`audio[data-key="${KeyboardEvent.key}"]`);
-    const key = document.querySelector(`div[data-key="${KeyboardEvent.key}"]`);
-    if(!audio) return;
-    
-    key.classList.add('playing'); //class playing in style.css
-    audio.currentTime = 0;
-    audio.play();
+    if (!audio) {
+        return;
+    } else {
+        const key = document.querySelector(`div[data-key="${KeyboardEvent.key}"]`);
+        key.classList.add('playing'); //class playing in style.css
+        audio.play();
+        audio.currentTime = 0;
+    }    
 }
 
-function removeTransition(e){
-    if(e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
+function removeTransition(TransitionEvent){
+    console.log(TransitionEvent.target);
+    if (TransitionEvent.type != 'transitionend') {
+        return;
+    } else {
+        //TransitionEvent.target = html element that belongs to TransitionEvent
+        TransitionEvent.target.classList.remove('playing');
+    }    
 }
 
+window.addEventListener('keydown', playSound);
 const keys = document.querySelectorAll('.key');
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
- window.addEventListener('keydown', playSound);
-
- /*
- window.addEventListener(
-    "keydown",
-    (KeyboardEvent) => {
-      const p = document.createElement("p");
-      p.textContent = `KeyboardEvent: key='${KeyboardEvent.key}' | code='${KeyboardEvent.code}'`;
-      document.getElementById("output").appendChild(p);
-      window.scrollTo(0, document.body.scrollHeight);
-    },
-    true,
-  );*/
+//transitionend: when a CSS transition has completed
