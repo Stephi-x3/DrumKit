@@ -36,6 +36,9 @@ function removeTransition(TransitionEvent){
 }
 
 const keys = document.querySelectorAll('.key');
+//touch
+keys.forEach(key => key.addEventListener('touchstart', playSoundAfterTouch, false));
+//keyboard
 window.addEventListener('keydown', playSound);
 
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
