@@ -1,4 +1,5 @@
 function playSound(KeyboardEvent){
+    console.log(KeyboardEvent);
     const audio = document.querySelector(`audio[data-key="${KeyboardEvent.key}"]`);
     if (!audio) {
         return;
