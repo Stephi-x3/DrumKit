@@ -12,8 +12,10 @@ function playSound(KeyboardEvent){
 }
 
 function playSoundAfterTouch(TouchEvent){
+    console.log(TouchEvent);
     console.log(TouchEvent.parentElement);
-    const audio = document.querySelector(`audio[data-key="${TouchEvent.parentElement.key}"]`);
+    return;
+    /*const audio = document.querySelector(`audio[data-key="${TouchEvent.parentElement.key}"]`);
     if (!audio) {
         return;
     } else {
@@ -21,7 +23,8 @@ function playSoundAfterTouch(TouchEvent){
         key.classList.add('playing'); //class playing in style.css
         audio.play();
         audio.currentTime = 0;
-    }    
+        
+    }    */
 }
 
 function removeTransition(TransitionEvent){
