@@ -24,3 +24,14 @@ window.addEventListener('keydown', playSound);
 const keys = document.querySelectorAll('.key');
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 //transitionend: when a CSS transition has completed
+
+// Eine Funktion, die auf das Touch-Ereignis reagiert
+function meineFunktion() {
+    alert('Du hast das Element berührt!');
+}
+
+// Das HTML-Element auswählen, auf das wir reagieren möchten
+var touchClick = document.getElementById('touchEvent');
+
+// Ein Touch-Ereignis hinzufügen und die Funktion verknüpfen
+touchClick.addEventListener('touchstart', meineFunktion, false);
