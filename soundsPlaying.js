@@ -12,8 +12,6 @@ function playSound(KeyboardEvent){
 }
 
 function playSoundAfterTouch(TouchEvent){
-    console.log(TouchEvent);
-    console.log(TouchEvent.target.parentNode.attributes[0].nodeValue);
     const audio = document.querySelector(`audio[data-key="${TouchEvent.target.parentNode.attributes[0].nodeValue}"]`);
     if (!audio) {
         return;
