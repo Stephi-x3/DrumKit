@@ -11,6 +11,19 @@ function playSound(KeyboardEvent){
     }    
 }
 
+function playSoundAfterTouch(TouchEvent){
+    console.log(TouchEvent.parentElement);
+    const audio = document.querySelector(`audio[data-key="${TouchEvent.parentElement.key}"]`);
+    if (!audio) {
+        return;
+    } else {
+        const key = document.querySelector(`div[data-key="${TouchEvent.parentElement.key}"]`);
+        key.classList.add('playing'); //class playing in style.css
+        audio.play();
+        audio.currentTime = 0;
+    }    
+}
+
 function removeTransition(TransitionEvent){
     console.log(TransitionEvent.target);
     if (TransitionEvent.type != 'transitionend') {
@@ -23,7 +36,7 @@ function removeTransition(TransitionEvent){
 
 const keys = document.querySelectorAll('.key');
 //touch
-keys.forEach(key => key.addEventListener('touchstart', playSound, false));
+keys.forEach(key => key.addEventListener('touchstart', playSoundAfterTouch, false));
 //keyboard
 window.addEventListener('keydown', playSound);
 
