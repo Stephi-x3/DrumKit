@@ -1,6 +1,6 @@
-function playSound(e){
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+function playSound(KeyboardEvent){
+    const audio = document.querySelector(`audio[data-key="${KeyboardEvent.key}"]`);
+    const key = document.querySelector(`div[data-key="${KeyboardEvent.key}"]`);
     if(!audio) return;
     
     key.classList.add('playing'); //class playing in style.css
@@ -16,3 +16,15 @@ function removeTransition(e){
 const keys = document.querySelectorAll('.key');
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
  window.addEventListener('keydown', playSound);
+
+ /*
+ window.addEventListener(
+    "keydown",
+    (KeyboardEvent) => {
+      const p = document.createElement("p");
+      p.textContent = `KeyboardEvent: key='${KeyboardEvent.key}' | code='${KeyboardEvent.code}'`;
+      document.getElementById("output").appendChild(p);
+      window.scrollTo(0, document.body.scrollHeight);
+    },
+    true,
+  );*/
