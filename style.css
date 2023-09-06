@@ -1,10 +1,10 @@
-body{
-  font-family: sans-serif;
+html{
   background: url('./background.jpg') bottom center;
   background-size: cover;
 }
 
 *{
+  font-family: sans-serif;
   margin: 0;
 }
 
