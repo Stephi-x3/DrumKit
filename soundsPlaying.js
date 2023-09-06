@@ -27,7 +27,9 @@ keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 // Eine Funktion, die auf das Touch-Ereignis reagiert
 function meineFunktion() {
-    alert('Du hast das Element berührt!');
+    const p = document.createElement("p");
+    p.textContent = "Element berührt!";
+    document.getElementById("output").appendChild(p);
 }
 
 // Das HTML-Element auswählen, auf das wir reagieren möchten
