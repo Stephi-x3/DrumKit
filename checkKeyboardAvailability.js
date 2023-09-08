@@ -1,5 +1,5 @@
 // Check touchSupport and keyboardSupport
-var touchSupport = 'ontouchstart' in window || navigator.maxTouchPoints || 'TouchEvent' in window;
+var touchSupport = 'ontouchstart' in window || navigator.maxTouchPoints;
 var keyboardSupport = navigator.keyboard || 'KeyboardEvent' in window;
 
 var addHowToDescription = document.getElementById('firstContainer');
