@@ -39,3 +39,6 @@ window.addEventListener('keydown', playSound);
 
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
+
+
+
