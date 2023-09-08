@@ -1,5 +1,4 @@
 function playSound(KeyboardEvent){
-    console.log(KeyboardEvent);
     const audio = document.querySelector(`audio[data-key="${KeyboardEvent.key}"]`);
     if (!audio) {
         return;
@@ -24,7 +23,6 @@ function playSoundAfterTouch(TouchEvent){
 }
 
 function removeTransition(TransitionEvent){
-    console.log(TransitionEvent.target);
     if (TransitionEvent.type != 'transitionend') {
         return;
     } else {
