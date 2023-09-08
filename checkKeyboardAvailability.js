@@ -8,7 +8,7 @@ var addHowToDescription = document.getElementById('firstContainer');
 
     if (touchSupport && keyboardSupport && !(windowWidth<400)) {
         addHowToDescription.textContent = 'Play sounds by hitting the keys on the keyboard OR simply touch the keys!';
-    } else if (!keyboardSupport || windowWidth<400) {
+    } else if (!keyboardSupport || (windowWidth<400)) {
         addHowToDescription.textContent = 'Touch the keys to play sounds!';
     } else {
         addHowToDescription.textContent = 'Play sounds by hitting the keys!';
