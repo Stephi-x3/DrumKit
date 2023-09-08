@@ -71,4 +71,7 @@ kbd {
     margin: .5rem;
     width: 5rem;
   }
+  .howTo {
+    font-size: 1.5rem;
+  }
 }
