@@ -4,9 +4,9 @@ function playSound(KeyboardEvent){
         return;
     } else {
         const key = document.querySelector(`div[data-key="${KeyboardEvent.key}"]`);
-        audio.currentTime = 0;
         key.classList.add('playing'); //class playing in style.css
         audio.play();
+        audio.currentTime = 0;
     }    
 }
 
@@ -16,9 +16,9 @@ function playSoundAfterTouch(TouchEvent){
         return;
     } else {
         const key = document.querySelector(`div[data-key="${TouchEvent.target.parentNode.attributes[0].nodeValue}"]`);
-        audio.currentTime = 0;
         key.classList.add('playing'); //class playing in style.css
         audio.play();
+        audio.currentTime = 0;
     } 
 }
 
