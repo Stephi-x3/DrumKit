@@ -19,9 +19,10 @@ function playSoundAfterTouch(TouchEvent){
         key.classList.add('playing'); //class playing in style.css
         audio.play();
         audio.currentTime = 0;
+        key.classList.remove('playing');
     } 
 }
-
+/*
 function removeTransition(TransitionEvent){
     if (TransitionEvent.type != 'transitionend') {
         return;
@@ -29,15 +30,15 @@ function removeTransition(TransitionEvent){
         //TransitionEvent.target = html element that belongs to TransitionEvent
         TransitionEvent.target.classList.remove('playing');
     }    
-}
+}*/
 
 const keys = document.querySelectorAll('.key');
 //touch
 keys.forEach(key => key.addEventListener('touchstart', playSoundAfterTouch, false));
 //keyboard
 window.addEventListener('keydown', playSound);
-
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+/*
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));*/
 
 
 
