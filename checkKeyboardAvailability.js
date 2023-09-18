@@ -1,7 +1,7 @@
 // Check touchSupport and keyboardSupport
 // It is assumed that a smartphone is being used when the width is < 400
 var windowWidth = window.screen.width;
-var touchSupport = 'ontouchstart' in window || navigator.maxTouchPoints;
+var touchSupport = 'ontouchstart' in window;
 var keyboardSupport = navigator.keyboard || 'KeyboardEvent' in window;
 
 var addHowToDescription = document.getElementById('firstContainer');
